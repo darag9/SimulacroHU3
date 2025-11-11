@@ -6,6 +6,7 @@ COPY webProductos.Api/*.csproj ./webProductos.Api/
 COPY webProductos.Application/*.csproj ./webProductos.Application/
 COPY webProductos.Infrastructure/*.csproj ./webProductos.Infrastructure/
 COPY webProductos.Domain/*.csproj ./webProductos.Domain/
+COPY webProductos.Tests/*.csproj ./webProductos.Tests/
 
 RUN dotnet restore
 
