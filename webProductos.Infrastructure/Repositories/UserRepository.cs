@@ -16,13 +16,13 @@ public class UserRepository : IUserRepository
 
     public async Task<User> GetByIdAsync(int id)
     {
-        return await _context.Users
+        return await _context.Users.AsNoTracking()
             .FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<User> GetByUsernameAsync(string username)
     {
-        return await _context.Users
+        return await _context.Users.AsNoTracking()
             .FirstOrDefaultAsync(u => u.Username == username);
     }
 

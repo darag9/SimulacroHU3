@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"username\": \"admin_render\",\n  \"email\": \"admin_render@webproductos.com\",\n  \"password\": \"Password123!\",\n  \"role\": \"Admin\"\n}",
+					"raw": "{\n  \"username\": \"admin_final\",\n  \"email\": \"admin_final@render.com\",\n  \"password\": \"Password123!\",\n  \"role\": \"Admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,11 +40,21 @@
 		{
 			"name": "[POST] Login",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTYxLCJleHAiOjE3NjI4NjczNjEsImlhdCI6MTc2MjgzODU2MSwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.2UCeCfeR1cl3tVpsxb1DtIQMxa1v68Tuv2pmA9BP-lOYIrA_9ZzQuQuHGBooTKOBGd9LsDdkTKRuDefz4bz8nA",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Password123!\"\n}",
+					"raw": "{\n  \"username\": \"admin_render\",\n  \"password\": \"Password123!\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,7 +89,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTg4LCJleHAiOjE3NjI4NjczODgsImlhdCI6MTc2MjgzODU4OCwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.BlGH0izeWT8kyxlEcgQYGWRwogiGdvLuWkGK9JpvVGFkSkYcFdLVSUR1RWRFQPEFKdu4ERnZ3nDRRP99N5I9CQ",
 							"type": "string"
 						}
 					]
@@ -88,7 +98,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Password123!\"\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "https://simulacrohu3.onrender.com/api/products",
@@ -114,7 +124,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTg4LCJleHAiOjE3NjI4NjczODgsImlhdCI6MTc2MjgzODU4OCwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.BlGH0izeWT8kyxlEcgQYGWRwogiGdvLuWkGK9JpvVGFkSkYcFdLVSUR1RWRFQPEFKdu4ERnZ3nDRRP99N5I9CQ",
 							"type": "string"
 						}
 					]
@@ -123,7 +133,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"Teclado Mecánico RGB\",\n  \"description\": \"Teclado 60% con switches rojos y luces RGB\",\n  \"price\": 120.50,\n  \"stock\": 50\n}",
+					"raw": "{\n  \"name\": \"Mouse Gamer Pro\",\n  \"description\": \"Mouse inalámbrico 16000 DPI\",\n  \"price\": 89.99,\n  \"stock\": 150\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -157,7 +167,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTg4LCJleHAiOjE3NjI4NjczODgsImlhdCI6MTc2MjgzODU4OCwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.BlGH0izeWT8kyxlEcgQYGWRwogiGdvLuWkGK9JpvVGFkSkYcFdLVSUR1RWRFQPEFKdu4ERnZ3nDRRP99N5I9CQ",
 							"type": "string"
 						}
 					]
@@ -182,6 +192,148 @@
 						"1"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTg4LCJleHAiOjE3NjI4NjczODgsImlhdCI6MTc2MjgzODU4OCwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.BlGH0izeWT8kyxlEcgQYGWRwogiGdvLuWkGK9JpvVGFkSkYcFdLVSUR1RWRFQPEFKdu4ERnZ3nDRRP99N5I9CQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Teclado Mecánico\",\r\n  \"description\": \"Teclado 60% con switches azules\",\r\n  \"price\": 125.00,\r\n  \"stock\": 45\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/products/1",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbkByZW5kZXIuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzYyODM4NTg4LCJleHAiOjE3NjI4NjczODgsImlhdCI6MTc2MjgzODU4OCwiaXNzIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20ifQ.BlGH0izeWT8kyxlEcgQYGWRwogiGdvLuWkGK9JpvVGFkSkYcFdLVSUR1RWRFQPEFKdu4ERnZ3nDRRP99N5I9CQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/products/1",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Show Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9maW5hbCIsIm5hbWVpZCI6IjEiLCJlbWFpbCI6ImFkbWluX2ZpbmFsQHJlbmRlci5jb20iLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3NjI4MzYwNjMsImV4cCI6MTc2Mjg2NDg2MywiaWF0IjoxNzYyODM2MDYzLCJpc3MiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIiwiYXVkIjoiaHR0cHM6Ly9hcGkud2VicHJvZHVjdG9zLmNvbSJ9.Rkr5UcRDgo0xTh2B5CFkZQXjS_V4YnnU6kMvhShCBxKoJwmv0QErNbw9cE9C4TNwAp1sjmtnBw8Y10NBXT1Kdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/users",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Get user by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/users/1",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] Update User",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": []
 			},
 			"response": []
 		}
