@@ -55,11 +55,13 @@ public class ProductRepository : IProductRepository
     public async Task DeleteAsync(int id)
     {
         var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
-        if (product != null)
+            
+        if (product == null)
         {
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            throw new Exception($"Producto con id {id} no encontrado.");
         }
-        
+
+        _context.Products.Remove(product);
+        await _context.SaveChangesAsync();
     }
 }

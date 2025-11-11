@@ -13,7 +13,7 @@ public class UserRepository : IUserRepository
     {
         _context = context;
     }
-    
+
     public async Task<User> GetByIdAsync(int id)
     {
         return await _context.Users
@@ -53,10 +53,14 @@ public class UserRepository : IUserRepository
     {
         var user = await _context.Users
             .FirstOrDefaultAsync(u => u.Id == id);
-        if (user != null)
+                
+        if (user == null)
         {
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
+            throw new Exception($"Usuario con id {id} no encontrado.");
         }
+
+        _context.Users.Remove(user);
+        await _context.SaveChangesAsync();
     }
 }
+    
