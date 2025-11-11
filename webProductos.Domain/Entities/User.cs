@@ -5,8 +5,7 @@ namespace webProductos.Domain.Entities;
 
 public class User
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    
     public int Id { get; set; }
     public string Username { get; set; }
     public string Email { get; set; }
