@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Servicio 1: API de C#
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webproductos-api
+    ports:
+      - "8080:8080" 
+    environment:
+      - ConnectionStrings__MySqlConnection=Server=mysql-db;Port=3306;Database=webProductosDb;User=root;Password=tu_password_secreto
+      - Jwt__Key=${JWT_KEY}
+      - Jwt__Issuer=https://api.webproductos.com
+      - Jwt__Audience=https://app.webproductos.com
+    depends_on:
+      - mysql-db
+    networks:
+      - webproductos-network
+
+  # Servicio 2: La Base de Datos MySQL
+  mysql-db:
+    image: mysql:8.0
+    container_name: webproductos-mysql
+    ports:
+      - "3306:3306" 
+    environment:
+      - MYSQL_ROOT_PASSWORD=Qwe.123*
+      - MYSQL_DATABASE=webProductosDb
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - webproductos-network
+
+# Define el volumen para persistir los datos de MySQL
+volumes:
+  mysql-data:
+    driver: local
+
+# Define la red interna para que los contenedores se comuniquen
+networks:
+  webproductos-network:
+    driver: bridge
