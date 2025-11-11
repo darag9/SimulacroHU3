@@ -11,8 +11,8 @@ using webProductos.Infrastructure.Data;
 namespace webProductos.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251111040338_FinalKeyFixMigration")]
-    partial class FinalKeyFixMigration
+    [Migration("20251111043737_FinalIdGenerationMigration")]
+    partial class FinalIdGenerationMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

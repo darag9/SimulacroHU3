@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace webProductos.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class FinalKeyFixMigration : Migration
+    public partial class FinalIdGenerationMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
