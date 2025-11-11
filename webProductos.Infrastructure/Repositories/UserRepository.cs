@@ -16,17 +16,20 @@ public class UserRepository : IUserRepository
     
     public async Task<User> GetByIdAsync(int id)
     {
-        return await _context.Users.FindAsync(id);
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<User> GetByUsernameAsync(string username)
     {
-        return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.Username == username);
     }
 
     public async Task<User> GetByEmailAsync(string email)
     {
-        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.Email == email);
     }
 
     public async Task<IEnumerable<User>> GetAllAsync()
@@ -48,7 +51,8 @@ public class UserRepository : IUserRepository
 
     public async Task DeleteAsync(int id)
     {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.Id == id);
         if (user != null)
         {
             _context.Users.Remove(user);

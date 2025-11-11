@@ -11,8 +11,8 @@ using webProductos.Infrastructure.Data;
 namespace webProductos.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251111043737_FinalIdGenerationMigration")]
-    partial class FinalIdGenerationMigration
+    [Migration("20251111045227_FluentApiMigration")]
+    partial class FluentApiMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
