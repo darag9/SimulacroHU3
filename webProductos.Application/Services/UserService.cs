@@ -6,14 +6,14 @@ namespace webProductos.Application.Services;
 
 public class UserService : IUserService
 {
-    
+
     private readonly IUserRepository _userRepository;
 
     public UserService(IUserRepository userRepository)
     {
         _userRepository = userRepository;
     }
-    
+
     public async Task<UserDto> GetUserByIdAsync(int id)
     {
         var user = await _userRepository.GetByIdAsync(id);
@@ -22,6 +22,7 @@ public class UserService : IUserService
             throw new Exception($"Usuario con id {id} no encontrado.");
         }
 
+        // Mapeo de Entidad a DTO
         return new UserDto
         {
             Id = user.Id,
@@ -34,7 +35,8 @@ public class UserService : IUserService
     public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
     {
         var users = await _userRepository.GetAllAsync();
-            
+
+        // Mapeo de Entidad a DTO
         return users.Select(user => new UserDto
         {
             Id = user.Id,
@@ -51,7 +53,7 @@ public class UserService : IUserService
         {
             throw new Exception($"Usuario con id {id} no encontrado.");
         }
-            
+
         var existingUserWithEmail = await _userRepository.GetByEmailAsync(updateUserDto.Email);
         if (existingUserWithEmail != null && existingUserWithEmail.Id != id)
         {
@@ -66,12 +68,6 @@ public class UserService : IUserService
 
     public async Task DeleteUserAsync(int id)
     {
-        var userToDelete = await _userRepository.GetByIdAsync(id);
-        if (userToDelete == null)
-        {
-            throw new Exception($"Usuario con id {id} no encontrado.");
-        }
-
         await _userRepository.DeleteAsync(id);
     }
 }

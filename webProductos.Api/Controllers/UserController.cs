@@ -8,8 +8,8 @@ namespace webProductos.Api.Controllers;
 public class UserController
 {
     [ApiController]
-    [Route("api/[controller]")] // -> /api/users
-    [Authorize(Roles = "Admin")]
+    [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")] // Protegido
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -36,7 +36,7 @@ public class UserController
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(ex.Message); // Devuelve 404
             }
         }
 
@@ -46,11 +46,11 @@ public class UserController
             try
             {
                 await _userService.UpdateUserAsync(id, updateUserDto);
-                return NoContent(); 
+                return NoContent(); // 204
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.Message); // 400 (ej. email ya existe)
             }
         }
 
@@ -60,11 +60,11 @@ public class UserController
             try
             {
                 await _userService.DeleteUserAsync(id);
-                return NoContent(); 
+                return NoContent(); // 204
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return NotFound(ex.Message); // 404
             }
         }
     }
