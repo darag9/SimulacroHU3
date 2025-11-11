@@ -58,7 +58,8 @@ public class AuthServiceTests
         _mockRepo.Verify(r => r.GetByUsernameAsync("testuser"), Times.Once);
         
     }
-
+    
+    [Fact]
     public async Task LoginAsync_ThrowException_WhenUserNotFound()
     {
         var loginDto = new LoginDto { Username = "nonexistent", Password = "password" };

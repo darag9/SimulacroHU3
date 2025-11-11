@@ -10,6 +10,8 @@ using webProductos.Infrastructure.Data;
 using webProductos.Infrastructure.Repositories;
 using webProductos.Infrastructure.Security;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using webProductos.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -19,9 +21,8 @@ var connectionString = configuration.GetConnectionString("MySqlConnection");
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(connectionString, 
-        ServerVersion.AutoDetect(connectionString)
-    ));
+    options.UseNpgsql(connectionString,
+        b => b.MigrationsAssembly("webProductos.Infrastructure")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
