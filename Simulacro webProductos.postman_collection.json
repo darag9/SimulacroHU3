@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "b0bffbfe-a1fc-472b-83bd-3c587a4cee0d",
+		"name": "Simulacro webProductos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46390089"
+	},
+	"item": [
+		{
+			"name": "[POST] Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin_render\",\n  \"email\": \"admin_render@webproductos.com\",\n  \"password\": \"Password123!\",\n  \"role\": \"Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Password123!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Show products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Password123!\"\n}"
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/products",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Teclado Mecánico RGB\",\n  \"description\": \"Teclado 60% con switches rojos y luces RGB\",\n  \"price\": 120.50,\n  \"stock\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/products",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Get product by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9yZW5kZXIiLCJuYW1laWQiOiIxIiwiZW1haWwiOiJhZG1pbl9yZW5kZXJAd2VicHJvZHVjdG9zLmNvbSIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTc2MjgzMTIxOSwiZXhwIjoxNzYyODYwMDE5LCJpYXQiOjE3NjI4MzEyMTksImlzcyI6Imh0dHBzOi8vYXBpLndlYnByb2R1Y3Rvcy5jb20iLCJhdWQiOiJodHRwczovL2FwaS53ZWJwcm9kdWN0b3MuY29tIn0.QmH0e899B4qHlKzHoXfYbVsVJyQ9-we0wLuAo16ucTo0oxpUhiO2R3hCHZEE9zHjMloqPoP505mdDGaGig-k-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Laptop Gamer\",\n  \"description\": \"Laptop con 32GB RAM y RTX 4090\",\n  \"price\": 2500.99,\n  \"stock\": 15\n}"
+				},
+				"url": {
+					"raw": "https://simulacrohu3.onrender.com/api/products/1",
+					"protocol": "https",
+					"host": [
+						"simulacrohu3",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
