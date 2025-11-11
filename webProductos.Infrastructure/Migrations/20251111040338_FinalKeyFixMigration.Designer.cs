@@ -11,8 +11,8 @@ using webProductos.Infrastructure.Data;
 namespace webProductos.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251111021433_FinalPostgresMigration")]
-    partial class FinalPostgresMigration
+    [Migration("20251111040338_FinalKeyFixMigration")]
+    partial class FinalKeyFixMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
